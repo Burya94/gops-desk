@@ -20,4 +20,4 @@ jobs:
         username: ${{ vars.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build the Docker image
-      run: git_sha=$(git rev-parse HEAD) && docker build . --file Dockerfile --tag buria94/gops-desk:$git_sha --push
+      run: docker build . --file Dockerfile --tag buria94/gops-desk:${{ github.event.pull_request.head.sha }} --push
