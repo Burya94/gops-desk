@@ -20,4 +20,4 @@ jobs:
         username: ${{ vars.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag gops-desk:${{ github.sha }} --push
+      run: docker build . --file Dockerfile --tag buria94/gops-desk:${{ github.sha }} --push
